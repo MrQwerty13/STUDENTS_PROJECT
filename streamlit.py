@@ -1,5 +1,5 @@
 # Small Python script for our project for web-application
-# To run this file, use the command: streamlit run file_py1.py
+# To run this file, use the command: streamlit run streamlit.py
 
 import streamlit as s
 
