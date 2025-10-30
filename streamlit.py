@@ -3,11 +3,12 @@
 
 import streamlit as s
 
-s.color_picker("Choose a colour")
-
 s.write("""
         # Добро пожаловать в наше веб-приложение написанное на Streamlit!
         """)
+
+s.color_picker("Choose a colour")
+
 s.write("""
         Он умеет все, что нужно нам, для создания красивого frontend
         """)
