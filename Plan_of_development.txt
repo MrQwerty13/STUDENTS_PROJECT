@@ -1,5 +1,75 @@
-Plan of dev BlockChain:
-    - 1. 
-    - 2.
-    - 3.
-    ...
+
+FULL BLOCKCHAIN DEVELOPMENT PLAN
+
+1. PROJECT GOAL
+   - Build a basic blockchain system to understand its internal mechanics.
+   - Implement block creation, mining, and validation logic.
+   - Create a simple CLI or web interface for interaction.
+
+2. SYSTEM ARCHITECTURE
+   - Programming language: Python.
+   - Main modules:
+       * Block
+       * Blockchain
+       * Network (optional, for distributed version)
+       * Interface (CLI or Flask web app)
+
+3. BLOCK STRUCTURE
+   - Fields:
+       * index — block number
+       * timestamp — block creation time
+       * data — transaction or message
+       * previous_hash — hash of the previous block
+       * hash — current block hash
+       * nonce — number used for mining
+
+4. HASHING SYSTEM
+   - Use hashlib (SHA-256).
+   - Hash formula: hash(index + timestamp + data + previous_hash + nonce).
+   - Hash must start with a certain number of zeros (difficulty level).
+
+5. MINING
+   - Implement proof-of-work.
+   - Increment nonce until hash meets the difficulty requirement.
+   - Once mined, add block to the chain.
+
+6. VALIDATION
+   - Verify that each block's previous_hash equals the previous block’s hash.
+   - Recalculate hash and compare it to stored one.
+   - Ensure the chain’s integrity.
+
+7. TRANSACTIONS (optional)
+   - Allow user transactions to be recorded in blocks.
+   - Store them in memory until the next block is mined.
+
+8. NETWORK (optional)
+   - Simulate peer-to-peer blockchain.
+   - Use Flask and HTTP requests to synchronize chains between nodes.
+
+9. INTERFACE
+   - CLI (command-line interaction) or web app (Flask).
+   - Commands:
+       * mine_block()
+       * show_chain()
+       * check_validity()
+       * add_transaction()
+
+10. TESTING
+    - Unit tests for each class and method.
+    - Chain validation test.
+    - Mining stress test.
+
+11. DOCUMENTATION
+    - Code comments.
+    - README.md with setup and usage instructions.
+
+12. DEPLOYMENT
+    - Option 1: local app (Python script).
+    - Option 2: Flask app (run on localhost:5000).
+    - Option 3: Docker container for distribution.
+
+13. FUTURE IMPROVEMENTS
+    - Wallet system with public/private keys.
+    - Consensus algorithms (Proof of Stake, etc.).
+    - UI with transaction visualization.
+    - Integration with real cryptocurrency APIs.
